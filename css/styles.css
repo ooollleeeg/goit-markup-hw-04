@@ -47,7 +47,8 @@ body {
   letter-spacing: 0.02em;
   padding-top: 32px;
   padding-bottom: 32px;
-  display: block;
+  display: flex;
+  align-items: center;
 }
 
 .navigation-link:hover,
@@ -84,11 +85,6 @@ body {
   line-height: 1.14;
   text-transform: uppercase;
   margin-bottom: 10px;
-}
-.about-aftertitle {
-  margin-top: 10px;
-  margin-left: 0;
-  max-width: 270px;
 }
 
 .title {
@@ -132,14 +128,6 @@ body {
   color: var(--whitetextcolor);
 }
 
-.foot,
-.hero {
-  background-color: var(--backgroundcolor);
-  color: var(--whitetextcolor);
-  max-width: 1600px;
-  margin: auto;
-}
-
 .foot-adrs {
   font-style: normal;
 }
@@ -165,17 +153,15 @@ body {
 }
 .foot-container {
   display: flex;
+  align-items: baseline;
 }
-.foot-social-links {
+.foot-cont-item {
   display: flex;
   flex-direction: column;
-  padding-top: 72px;
-  margin-left: 70px;
 }
-.foot-logo-addres {
-  padding-top: 60px;
+.foot-cont-item:not(:last-child) {
+  margin-right: 70px;
 }
-
 .hero-btn {
   font-family: inherit;
   font-weight: bold;
@@ -248,6 +234,7 @@ body {
   margin-right: 93px;
 }
 .hero {
+  color: var(--whitetextcolor);
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
@@ -255,7 +242,9 @@ body {
     url(../images/hero.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: cover, auto;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .activity {
@@ -263,10 +252,13 @@ body {
 }
 
 .foot {
-  min-height: 252px;
-
   padding-bottom: 60px;
+  padding-top: 60px;
+  background-color: var(--backgroundcolor);
+  color: var(--whitetextcolor);
+  margin: 0 auto;
 }
+
 .catalog {
   padding-top: 0;
   padding-bottom: 20px;
@@ -285,8 +277,6 @@ body {
 }
 
 .about-box-icon {
-  width: 270px;
-  height: 120px;
   background-color: var(--backgroundcolor2);
   border-radius: 4px;
   margin-bottom: 30px;
@@ -381,12 +371,14 @@ body {
   flex-basis: calc(100% / 6 - 30px);
 }
 .customer-list-item-link {
-  display: block;
-  width: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   height: 92px;
   border-radius: 4px;
   border: 1px solid var(--sociallinkcolor);
-  padding: 16px 32px;
+
   color: var(--sociallinkcolor);
 }
 
@@ -450,8 +442,11 @@ body {
   margin-top: 30px;
   flex-basis: calc(100% / 3 - 30px);
 }
-.catalog-list-item:hover,
-.catalog-list-item:focus {
+.catalog-list-item-link {
+  display: flex;
+}
+.catalog-list-item-link:hover,
+.catalog-list-item-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
